@@ -1,12 +1,30 @@
 <template>
     <div>
-        我是详情页面
+        <nav-top></nav-top>
+        <detail-list :goods="goods"></detail-list>
     </div>
 </template>
 
 <script>
+import NavTop from '../../components/NavTop.vue'
+import DetailList from './components/DetailList.vue'
 export default {
-    name:'Detail'
+  components: { NavTop, DetailList },
+    name:'Detail',
+    data(){
+        return{
+            goodslist:[],
+            goods:[]
+        }
+    },
+    mounted(){
+        this.$axios.get("http://mock-api.com/RzJx6rn9.mock/goods").then(res=>{
+        this.goodslist = res.data.goodslist;
+        this.goods = this.goodslist.find(item =>{
+            return item.id = this.$route.params.id
+            })
+        })
+    }
 }
 </script>
 

@@ -1,18 +1,18 @@
 <template>
-    <div>
+    <div style="height:100%">
         <nav-top>
             
         </nav-top>
-        <el-container>
+        <el-container style="height:100%">
           <el-aside width="200px">
-            <nav-left :navlist="navlist"></nav-left>
+            <nav-left :navlist="navlist" @e-child="handle"></nav-left>
           </el-aside>
           <el-container>
             <el-header>
-              <swiper></swiper>
+              <swiper :swiperlist="swiperlist"></swiper>
             </el-header>
             <el-main>
-              <list></list>
+              <list :goodslist="list"></list>
             </el-main>
           </el-container>
         </el-container>
@@ -29,23 +29,40 @@ export default {
     name:'Home',
     data(){
       return{
-        navlist:[]
+        navlist:[],
+        swiperlist:[],
+        goodslist:[],
+        list:[]
+      }
+    },
+    methods:{
+      handle(data){
+        this.cid = data
+        this.list = this.goodslist.filter(item => item.cid == this.cid)
       }
     },
     mounted(){
       this.$axios.get("http://mock-api.com/RzJx6rn9.mock/navlist").then(res=>{
         this.navlist = res.data.navlist;
       })
+      this.$axios.get("http://mock-api.com/RzJx6rn9.mock/swiperlist").then(res=>{
+        this.swiperlist = res.data.swiperlist;
+      })
+      this.$axios.get("http://mock-api.com/RzJx6rn9.mock/goods").then(res=>{
+        this.goodslist = res.data.goodslist;
+        this.list = this.goodslist
+      })
     }
 }
 </script>
 
 <style scoped>
-.el-header, .el-footer {
+.el-header{
     background-color: #B3C0D1;
     color: #333;
     text-align: center;
-    line-height: 60px;
+    height: 300px !important;
+    padding: 0;
   }
   
   .el-aside {
@@ -59,19 +76,7 @@ export default {
     background-color: #E9EEF3;
     color: #333;
     text-align: center;
-    line-height: 160px;
+    
   }
   
-  body > .el-container {
-    margin-bottom: 40px;
-  }
-  
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
-  
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-  }
 </style>
