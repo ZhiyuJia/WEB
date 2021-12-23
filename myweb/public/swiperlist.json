@@ -1,0 +1,20 @@
+{
+    "swiperlist":[
+        {
+            "id":"001",
+            "img":"https://h2.appsimg.com/b.appsimg.com/upload/mst/2021/12/07/142/2780da0b93e33b4236a75db43407acbb.jpg"
+        },
+        {
+            "id":"002",
+            "img":"https://h2.appsimg.com/b.appsimg.com/upload/mst/2021/12/07/27/981b0a5127cd32d09f9201feadc4b2b6.jpg"
+        },
+        {
+            "id":"003",
+            "img":"https://h2.appsimg.com/b.appsimg.com/upload/mst/2021/12/06/5/0913c3160ccbde88c1d00133039a99f3.jpg"
+    	},
+        {
+            "id":"004",
+            "img":"https://h2.appsimg.com/b.appsimg.com/upload/mst/2021/06/18/17/3d5844c7778d8f10ced504d765f5ed53.jpg"
+    	}
+    ]
+}

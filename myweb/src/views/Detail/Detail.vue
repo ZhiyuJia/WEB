@@ -18,7 +18,7 @@ export default {
         }
     },
     mounted(){
-        this.$axios.get("http://mock-api.com/RzJx6rn9.mock/goods").then(res=>{
+        this.$axios.get("goodslist.json").then(res=>{
         this.goodslist = res.data.goodslist;
         this.goods = this.goodslist.find(item =>{
             return item.id = this.$route.params.id

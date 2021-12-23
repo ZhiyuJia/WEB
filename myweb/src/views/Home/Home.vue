@@ -31,8 +31,8 @@ export default {
       return{
         navlist:[],
         swiperlist:[],
-        goodslist:[],
-        list:[]
+        goodslist:this.$store.state.goodslist,
+        list:this.$store.state.goodslist
       }
     },
     methods:{
@@ -42,16 +42,17 @@ export default {
       }
     },
     mounted(){
-      this.$axios.get("http://mock-api.com/RzJx6rn9.mock/navlist").then(res=>{
+      this.$axios.get("navlist.json").then(res=>{
         this.navlist = res.data.navlist;
       })
-      this.$axios.get("http://mock-api.com/RzJx6rn9.mock/swiperlist").then(res=>{
+      this.$axios.get("swiperlist.json").then(res=>{
         this.swiperlist = res.data.swiperlist;
       })
-      this.$axios.get("http://mock-api.com/RzJx6rn9.mock/goods").then(res=>{
-        this.goodslist = res.data.goodslist;
-        this.list = this.goodslist
-      })
+      //this.$axios.get("goodslist.json").then(res=>{
+      //  this.goodslist = res.data.goodslist;
+      //  this.list = this.goodslist
+      //})
+      this.$store.dispatch('getGoodsList')
     }
 }
 </script>

@@ -71,7 +71,7 @@
             <el-row style="margin-top: 20px">
               <el-col>
                 <el-button type="primary">立即购买</el-button>
-                <el-button type="primary">加入购物车</el-button>
+                <el-button type="primary" @click="addCart">加入购物车</el-button>
               </el-col>
             </el-row>
             <!-- 第7行 -->
@@ -103,6 +103,24 @@ export default {
         return{
             num:1
         }
+    },
+    computed:{
+      result(){
+        return{
+          id:this.goods.id,
+          name:this.goods.name,
+          onlineprice:this.goods.onlineprice,
+          num:this.num,
+          sum:this.goods.onlineprice * this.num
+        }
+
+      }
+    },
+    methods:{
+      addCart(){
+        this.$store.commit('addCart',this.result)
+        this.$alert('添加购物车成功','提示',{confirmButtonText:'确定'})
+      }
     }
 }
 </script>
