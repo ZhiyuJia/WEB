@@ -1,0 +1,20 @@
+{
+    "swiperlist":[
+        {
+            "id":"001",
+            "img":"https://img11.360buyimg.com/babel/s1420x820_jfs/t1/207760/20/14446/95622/61ceba1dE01a407f6/9b0cb8cfa3bcb198.jpg!cc_1420x820.webp"
+        },
+        {
+            "id":"002",
+            "img":"https://bossaudioandcomic-1252317822.image.myqcloud.com/activity/document/a1a62dada6c1ffce8e055242a625d0ad.jpg"
+        },
+        {
+            "id":"003",
+            "img":"https://img10.360buyimg.com/babel/s1980x750_jfs/t1/142706/9/23324/94580/61a4804eE01a237a6/637dbac832542e30.jpg!cc_1980x750.webp"
+    	},
+        {
+            "id":"004",
+            "img":"https://img30.360buyimg.com/babel/s1900x740_jfs/t1/115585/5/26275/179691/61cbf863E632a5285/d40cf7cda186aa79.jpg!cc_1900x740.webp"
+    	}
+    ]
+}
